@@ -1,28 +1,10 @@
 #Cramerator Code
 
 
-
-#Cx1 = float(input("Coefficiente di x1: "))
-#Cy1 = float(input("Coefficiente di y1: "))
-#Cz1 = float(input("Coefficiente di z1: "))
-#r1 = float(input("Risultato della prima equazione: "))
-
-#Cx2 = float(input("Coefficiente di x2: "))
-#Cy2 = float(input("Coefficiente di y2: "))
-#Cz2 = float(input("Coefficiente di z2: "))
-#r2 = float(input("Risultato della seconda equazione: "))
-
-#Cx3 = float(input("Coefficiente di x3: "))
-#Cy3 = float(input("Coefficiente di y3: "))
-#Cz3 = float(input("Coefficiente di z3: "))
-#r3 = float(input("Risultato della terza equazione: "))
-
-
 #DA = float((Cx1*Cy2*Cz3)+(Cy1*Cz3*Cx3)+(Cz1*Cx2*Cy3)-(Cz1*Cy2*Cx3)-(Cy1*Cx2*Cz3)-(Cx1*Cz2*Cy3))
 #DX = float((r1*Cy2*Cz3)+(Cy1*Cz2*r3)+(Cz1*Cx2*r3)-(Cx1*Cz2*r3)-(r1*Cx2*Cz3)-(Cz1*r2*Cx3))
 #DY = float((Cx1*r2*Cz3)+(r1*Cz2*Cx3)+(Cz1*Cx2*r3)-(Cx1*r2*Cy3)-(Cx)-())
 #DZ = float(())
-
 
 
 
