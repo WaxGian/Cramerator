@@ -11,7 +11,7 @@
 
 
 #Systems of equations solver with cramer method
-#By Gianluca Cappelli "2P2L"
+#By WaxGian "2P2L"
 
 
 from pathlib import Path
