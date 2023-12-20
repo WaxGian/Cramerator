@@ -75,10 +75,40 @@ canvas.create_text(
     fill="#FFA800",
     font=("RedHatDisplay Bold", 36 * -1)
 )
+# Define a dictionary with the common properties
+entry_properties = {
+    'bd': 0,
+    'bg': "#355B63",
+    'highlightthickness': 0,
+    'font': ("Arial", 22)
+}
 
+# Define a list with the positions and image paths for each Entry widget
+entries_info = [
+    (67.0, 54.5, "entry_1.png", 39.5, 43.0),
+    (175.0, 54.5, "entry_2.png", 147.5, 43.0),
+    (175.0, 144.5, "entry_3.png", 147.5, 133.0),
+    (283.0, 234.5, "entry_4.png", 255.5, 223.0),
+    (283.0, 144.5, "entry_5.png", 255.5, 133.0),
+    (283.0, 54.5, "entry_6.png", 255.5, 43.0),
+    (417.0, 54.5, "entry_7.png", 389.5, 43.0),
+    (417.0, 144.5, "entry_8.png", 389.5, 133.0),
+    (417.0, 234.5, "entry_9.png", 389.5, 223.0),
+    (175.0, 234.5, "entry_10.png", 147.0, 223.0),
+    (67.0, 144.5, "entry_11.png", 39.5, 133.0),
+    (67.0, 234.5, "entry_12.png", 39.5, 223.0),
+]
+
+# Create the Entry widgets in a loop
+entries = []
+for i, (x, y, image_path, entry_x, entry_y) in enumerate(entries_info, 1):
+    entry_image = PhotoImage(file=relative_to_assets(image_path))
+    entry_bg = canvas.create_image(x, y, image=entry_image)
+    entry = Entry(**entry_properties)
+    entry.place(x=entry_x, y=entry_y, width=55.0, height=23.0)
+    entries.append(entry)
 
 #Gui Input
-
 # Define a dictionary with the common properties
 entry_properties = {
     'bd': 0,
