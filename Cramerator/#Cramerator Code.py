@@ -14,6 +14,7 @@
 #By WaxGian "2P2L"
 
 
+from tkinter import Label, StringVar
 from pathlib import Path
 from tkinter import Tk, Canvas, Entry, Button, PhotoImage
 
@@ -26,9 +27,8 @@ def relative_to_assets(path: str) -> Path:
 #Window Settings
 window = Tk()
 window.title('Cramerator')
-window.geometry("486x918")
+window.geometry("486x718")
 window.configure(bg = "#152D35")
-
 
 #Window Structur Gui
 canvas = Canvas(
@@ -75,10 +75,6 @@ canvas.create_text(
     fill="#FFA800",
     font=("RedHatDisplay Bold", 36 * -1)
 )
-
-
-
-
 
 
 button_image_C = PhotoImage(
