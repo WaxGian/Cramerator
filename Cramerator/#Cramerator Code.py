@@ -27,20 +27,20 @@ def relative_to_assets(path: str) -> Path:
 #Window Settings
 window = Tk()
 window.title('Cramerator')
-window.geometry("486x918")
+window.geometry("486x818")
 window.configure(bg = "#152D35")
 
 #Window Structur Gui
+
 canvas = Canvas(
     window,
     bg = "#152D35",
-    height = 918,
+    height = 818,
     width = 486,
     bd = 0,
     highlightthickness = 0,
     relief = "ridge"
 )
-
 canvas.place(x = 0, y = 0)
 canvas.create_rectangle(
     0.0,
@@ -75,253 +75,63 @@ canvas.create_text(
     fill="#FFA800",
     font=("RedHatDisplay Bold", 36 * -1)
 )
+# Define a dictionary with the common properties
+entry_properties = {
+    'bd': 0,
+    'bg': "#355B63",
+    'highlightthickness': 0,
+    'font': ("Arial", 22)
+}
 
+# Define a list with the positions and image paths for each Entry widget
+entries_info = [
+    (67.0, 54.5, "entry_1.png", 39.5, 43.0),
+    (175.0, 54.5, "entry_2.png", 147.5, 43.0),
+    (175.0, 144.5, "entry_3.png", 147.5, 133.0),
+    (283.0, 234.5, "entry_4.png", 255.5, 223.0),
+    (283.0, 144.5, "entry_5.png", 255.5, 133.0),
+    (283.0, 54.5, "entry_6.png", 255.5, 43.0),
+    (417.0, 54.5, "entry_7.png", 389.5, 43.0),
+    (417.0, 144.5, "entry_8.png", 389.5, 133.0),
+    (417.0, 234.5, "entry_9.png", 389.5, 223.0),
+    (175.0, 234.5, "entry_10.png", 147.0, 223.0),
+    (67.0, 144.5, "entry_11.png", 39.5, 133.0),
+    (67.0, 234.5, "entry_12.png", 39.5, 223.0),
+]
 
-
+# Create the Entry widgets in a loop
+entries = []
+for i, (x, y, image_path, entry_x, entry_y) in enumerate(entries_info, 1):
+    entry_image = PhotoImage(file=relative_to_assets(image_path))
+    entry_bg = canvas.create_image(x, y, image=entry_image)
+    entry = Entry(**entry_properties)
+    entry.place(x=entry_x, y=entry_y, width=55.0, height=23.0)
+    entries.append(entry)
 
 #Gui Input
+# Define a dictionary with the common properties
+entry_properties = {
+    'bd': 0,
+    'bg': "#355B63",
+    'highlightthickness': 0,
+    'font': ("Arial", 22)
+}
 
-entry_image_1 = PhotoImage(
-    file=relative_to_assets("entry_1.png"))
-entry_bg_1 = canvas.create_image(
-    67.0,
-    54.5,
-    image=entry_image_1
-)
-entry_1 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_1.place(
-    x=39.5,
-    y=43.0,
-    width=55.0,
-    height=23.0
-)
+# Define a list with the positions and image paths for each Entry widget
+entries_info = [
+    (67.0, 54.5, "entry_1.png", 39.5, 43.0),
+    (175.0, 54.5, "entry_2.png", 147.5, 43.0),
+    # Add the rest of the entries here...
+]
 
-entry_image_2 = PhotoImage(
-    file=relative_to_assets("entry_2.png"))
-entry_bg_2 = canvas.create_image(
-    175.0,
-    54.5,
-    image=entry_image_2
-)
-entry_2 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_2.place(
-    x=147.5,
-    y=43.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_3 = PhotoImage(
-    file=relative_to_assets("entry_3.png"))
-entry_bg_3 = canvas.create_image(
-    175.0,
-    144.5,
-    image=entry_image_3
-)
-entry_3 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_3.place(
-    x=147.5,
-    y=133.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_4 = PhotoImage(
-    file=relative_to_assets("entry_4.png"))
-entry_bg_4 = canvas.create_image(
-    283.0,
-    234.5,
-    image=entry_image_4
-)
-entry_4 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_4.place(
-    x=255.5,
-    y=223.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_5 = PhotoImage(
-    file=relative_to_assets("entry_5.png"))
-entry_bg_5 = canvas.create_image(
-    283.0,
-    144.5,
-    image=entry_image_5
-)
-entry_5 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_5.place(
-    x=255.5,
-    y=133.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_6 = PhotoImage(
-    file=relative_to_assets("entry_6.png"))
-entry_bg_6 = canvas.create_image(
-    283.0,
-    54.5,
-    image=entry_image_6
-)
-entry_6 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_6.place(
-    x=255.5,
-    y=43.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_7 = PhotoImage(
-    file=relative_to_assets("entry_7.png"))
-entry_bg_7 = canvas.create_image(
-    417.0,
-    54.5,
-    image=entry_image_7
-)
-entry_7 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_7.place(
-    x=389.5,
-    y=43.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_8 = PhotoImage(
-    file=relative_to_assets("entry_8.png"))
-entry_bg_8 = canvas.create_image(
-    417.0,
-    144.5,
-    image=entry_image_8
-)
-entry_8 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_8.place(
-    x=389.5,
-    y=133.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_9 = PhotoImage(
-    file=relative_to_assets("entry_9.png"))
-entry_bg_9 = canvas.create_image(
-    417.0,
-    234.5,
-    image=entry_image_9
-)
-entry_9 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_9.place(
-    x=389.5,
-    y=223.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_10 = PhotoImage(
-    file=relative_to_assets("entry_10.png"))
-entry_bg_10 = canvas.create_image(
-    175.0,
-    234.5,
-    image=entry_image_10
-)
-entry_10 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_10.place(
-    x=147.0,
-    y=223.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_11 = PhotoImage(
-    file=relative_to_assets("entry_11.png"))
-entry_bg_11 = canvas.create_image(
-    67.0,
-    144.5,
-    image=entry_image_11
-)
-entry_11 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_11.place(
-    x=39.5,
-    y=133.0,
-    width=55.0,
-    height=23.0
-)
-
-entry_image_12 = PhotoImage(
-    file=relative_to_assets("entry_12.png"))
-entry_bg_12 = canvas.create_image(
-    67.0,
-    234.5,
-    image=entry_image_12
-)
-entry_12 = Entry(
-    bd=0,
-    bg="#355B63",
-    highlightthickness=0,
-    font=("Arial", 22)
-)
-entry_12.place(
-    x=39.5,
-    y=223.0,
-    width=55.0,
-    height=23.0
-)
-
-
+# Create the Entry widgets in a loop
+entries = []
+for x, y, image_path, entry_x, entry_y in entries_info:
+    entry_image = PhotoImage(file=relative_to_assets(image_path))
+    entry_bg = canvas.create_image(x, y, image=entry_image)
+    entry = Entry(**entry_properties)
+    entry.place(x=entry_x, y=entry_y, width=55.0, height=23.0)
+    entries.append(entry)
 
 canvas.create_oval(
     320.0,
