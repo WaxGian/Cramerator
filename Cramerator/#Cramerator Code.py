@@ -27,7 +27,7 @@ def relative_to_assets(path: str) -> Path:
 #Window Settings
 window = Tk()
 window.title('Cramerator')
-window.geometry("486x718")
+window.geometry("486x918")
 window.configure(bg = "#152D35")
 
 #Window Structur Gui
